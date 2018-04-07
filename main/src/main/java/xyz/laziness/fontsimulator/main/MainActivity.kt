@@ -16,6 +16,8 @@ import uk.co.chrisjenx.calligraphy.TypefaceUtils
 
 
 const val STANDARD_TEXT_SIZE: Int = 14
+const val WEIGHT_LINE_SPACING: Float = 1.5f
+const val WEIGHT_LETTER_SPACING: Float = 0.05f
 
 class MainActivity : AppCompatActivity() {
 
@@ -59,6 +61,8 @@ class MainActivity : AppCompatActivity() {
                         TypedValue.COMPLEX_UNIT_SP, currentSize)
                 multiLineText.setTextSize(
                         TypedValue.COMPLEX_UNIT_SP, currentSize)
+                fontSizeValue.text = String.format(
+                        getString(R.string.sp_holder), currentSize.toInt())
             }
 
             override fun onStartTrackingTouch(sb: SeekBar?) {
@@ -70,9 +74,11 @@ class MainActivity : AppCompatActivity() {
 
         lineSpacingSeek.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(sb: SeekBar?, progress: Int, fromUser: Boolean) {
-                val currentSpacing = progress.toFloat()
+                val currentSpacing = progress * WEIGHT_LINE_SPACING
                 singleLineText.setLineSpacing(currentSpacing, 1f)
                 multiLineText.setLineSpacing(currentSpacing, 1f)
+                lineSpacingValue.text = String.format(
+                        getString(R.string.px_under_two_holder), currentSpacing)
             }
 
             override fun onStartTrackingTouch(sb: SeekBar?) {
@@ -84,9 +90,11 @@ class MainActivity : AppCompatActivity() {
 
         letterSpacingSeek.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(sb: SeekBar?, progress: Int, fromUser: Boolean) {
-                val currentSpacing = progress.toFloat()
+                val currentSpacing = progress * WEIGHT_LETTER_SPACING
                 singleLineText.letterSpacing = currentSpacing
                 multiLineText.letterSpacing = currentSpacing
+                letterSpacingValue.text = String.format(
+                        getString(R.string.px_under_two_holder), currentSpacing)
             }
 
             override fun onStartTrackingTouch(sb: SeekBar?) {
@@ -125,6 +133,15 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun initValueView() {
+        fontSizeValue.text = String.format(
+                getString(R.string.sp_holder), STANDARD_TEXT_SIZE)
+        lineSpacingValue.text = String.format(
+                getString(R.string.px_under_two_holder), 0f)
+        letterSpacingValue.text = String.format(
+                getString(R.string.px_under_two_holder), 0f)
+    }
+
     private fun initFont() {
         CalligraphyConfig.initDefault(CalligraphyConfig.Builder()
                 .setFontAttrId(R.attr.fontPath)
@@ -155,6 +172,7 @@ class MainActivity : AppCompatActivity() {
         setEditTextEvent()
         setSeekBarEvent()
         setRadioButtonEvent()
+        initValueView()
     }
 
 }
