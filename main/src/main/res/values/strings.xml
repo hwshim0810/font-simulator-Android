@@ -23,10 +23,15 @@
         Pellentesque iaculis, lacus sed dapibus lobortis, velit dui gravida purus, nec sollicitudin lectus eros eu dolor. Suspendisse potenti.
         Etiam porta sed nisl sit amet sagittis. Sed tempus risus a ipsum luctus tincidunt.
     </string>
+    <string name="value_example">10</string>
 
     <!-- Font Paths -->
     <string name="font_path_bold">fonts/NotoSansKR-Bold-Hestia.otf</string>
     <string name="font_path_demi">fonts/NotoSansKR-DemiLight-Hestia.otf</string>
     <string name="font_path_medium">fonts/NotoSansKR-Medium-Hestia.otf</string>
+
+    <!-- Placeholder -->
+    <string name="sp_holder">%d sp</string>
+    <string name="px_under_two_holder">%.2f px</string>
 
 </resources>
