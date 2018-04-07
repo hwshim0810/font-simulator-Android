@@ -16,8 +16,8 @@
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:background="@color/colorPrimary"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
     </android.support.design.widget.AppBarLayout>
@@ -107,7 +107,7 @@
     </RelativeLayout>
 
     <RadioGroup
-        android:id="@+id/radioGroup"
+        android:id="@+id/fontGroup"
         style="@style/MainItemMargin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -142,7 +142,7 @@
         tools:text="@string/single_line_example"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+        app:layout_constraintTop_toBottomOf="@+id/fontGroup" />
 
     <TextView
         android:id="@+id/multiLineText"
