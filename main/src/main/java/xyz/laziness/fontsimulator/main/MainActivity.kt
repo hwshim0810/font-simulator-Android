@@ -7,18 +7,30 @@ import android.text.TextWatcher
 import android.util.TypedValue
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.RadioButton
+import android.widget.RadioGroup
 import android.widget.SeekBar
 import kotlinx.android.synthetic.main.activity_main.*
+import uk.co.chrisjenx.calligraphy.CalligraphyConfig
+import uk.co.chrisjenx.calligraphy.TypefaceUtils
 
 
-const val standardTextSize: Int = 14
+const val STANDARD_TEXT_SIZE: Int = 14
 
 class MainActivity : AppCompatActivity() {
+
+    private val fontBold by lazy { getString(R.string.font_bold) }
+    private val fontDemiLight by lazy { getString(R.string.font_demilight) }
+    private val fontMedium by lazy { getString(R.string.font_medium) }
+    private val fontPathBold by lazy { getString(R.string.font_path_bold) }
+    private val fontPathDemi by lazy { getString(R.string.font_path_demi) }
+    private val fontPathMedium by lazy { getString(R.string.font_path_medium) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
+        initFont()
         initUi()
     }
 
@@ -42,7 +54,7 @@ class MainActivity : AppCompatActivity() {
     private fun setSeekBarEvent() {
         fontSizeSeek.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(sb: SeekBar?, progress: Int, fromUser: Boolean) {
-                val currentSize = (progress + standardTextSize).toFloat()
+                val currentSize = (progress + STANDARD_TEXT_SIZE).toFloat()
                 singleLineText.setTextSize(
                         TypedValue.COMPLEX_UNIT_SP, currentSize)
                 multiLineText.setTextSize(
@@ -100,9 +112,49 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
+    private fun setRadioButtonEvent() {
+        fontGroup.setOnCheckedChangeListener {
+            radioGroup: RadioGroup?, i: Int ->
+                val checkedButton = radioGroup!!.findViewById<RadioButton>(i)
+
+                when (checkedButton.text) {
+                    fontBold -> setExampleTextFont(fontBold)
+                    fontDemiLight -> setExampleTextFont(fontDemiLight)
+                    fontMedium -> setExampleTextFont(fontMedium)
+                }
+        }
+    }
+
+    private fun initFont() {
+        CalligraphyConfig.initDefault(CalligraphyConfig.Builder()
+                .setFontAttrId(R.attr.fontPath)
+                .build()
+        )
+    }
+
+    private fun setExampleTextFont(type : String) {
+        when (type) {
+            fontBold -> {
+                singleLineText.typeface = TypefaceUtils.load(assets, fontPathBold)
+                multiLineText.typeface = TypefaceUtils.load(assets, fontPathBold)
+            }
+
+            fontDemiLight -> {
+                singleLineText.typeface = TypefaceUtils.load(assets, fontPathDemi)
+                multiLineText.typeface = TypefaceUtils.load(assets, fontPathDemi)
+            }
+
+            fontMedium -> {
+                singleLineText.typeface = TypefaceUtils.load(assets, fontPathMedium)
+                multiLineText.typeface = TypefaceUtils.load(assets, fontPathMedium)
+            }
+        }
+    }
+
     private fun initUi() {
         setEditTextEvent()
         setSeekBarEvent()
+        setRadioButtonEvent()
     }
 
 }
