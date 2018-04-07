@@ -49,6 +49,16 @@
             android:layout_height="wrap_content"
             style="@style/ItemTextStyle"
             android:text="@string/font_size"/>
+
+        <TextView
+            android:id="@+id/fontSizeValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/ItemTextStyle"
+            tools:text="@string/value_example"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/fontSizeText" />
+
         <SeekBar
             android:id="@+id/fontSizeSeek"
             android:layout_width="match_parent"
@@ -73,6 +83,16 @@
             android:layout_height="wrap_content"
             style="@style/ItemTextStyle"
             android:text="@string/line_spacing"/>
+
+        <TextView
+            android:id="@+id/lineSpacingValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/ItemTextStyle"
+            tools:text="@string/value_example"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/lineSpacingText" />
+
         <SeekBar
             android:id="@+id/lineSpacingSeek"
             android:layout_width="match_parent"
@@ -97,6 +117,16 @@
             android:layout_height="wrap_content"
             style="@style/ItemTextStyle"
             android:text="@string/letter_spacing"/>
+
+        <TextView
+            android:id="@+id/letterSpacingValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/ItemTextStyle"
+            tools:text="@string/value_example"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/letterSpacingText" />
+
         <SeekBar
             android:id="@+id/letterSpacingSeek"
             android:layout_width="match_parent"
