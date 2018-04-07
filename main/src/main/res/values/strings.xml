@@ -1,4 +1,26 @@
 <resources>
 
     <string name="action_settings">Settings</string>
+
+    <!-- Hint -->
+    <string name="example_hint">텍스트를 입력해주세요</string>
+    
+    <!-- Main Items -->
+    <string name="font_size">Font Size</string>
+    <string name="line_spacing">Line Spacing</string>
+    <string name="letter_spacing">Letter Spacing</string>
+    <string name="font_bold">Bold</string>
+    <string name="font_medium">Medium</string>
+    <string name="font_demilight">Demilight</string>
+
+    <!-- Example Text -->
+    <string name="single_line_example">
+        Donec pellentesque vulputate vulputate
+    </string>
+    <string name="multi_line_example">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget metus dui.
+        Vivamus et orci commodo, volutpat enim at, scelerisque felis. Mauris quis viverra urna, aliquam commodo odio.
+        Pellentesque iaculis, lacus sed dapibus lobortis, velit dui gravida purus, nec sollicitudin lectus eros eu dolor. Suspendisse potenti.
+        Etiam porta sed nisl sit amet sagittis. Sed tempus risus a ipsum luctus tincidunt.
+    </string>
 </resources>

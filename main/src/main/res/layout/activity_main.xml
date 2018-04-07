@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteY="25dp">
 
     <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay">
@@ -20,14 +22,143 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_main" />
+    <EditText
+        android:id="@+id/editText"
+        style="@style/MainItemMargin"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:hint="@string/example_hint"
+        android:inputType="text"
+        android:maxLength="25"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:id="@+id/fontSizeItem"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        style="@style/MainItemMargin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText">
 
-</android.support.design.widget.CoordinatorLayout>
+        <TextView
+            android:id="@+id/fontSizeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/ItemTextStyle"
+            android:text="@string/font_size"/>
+        <SeekBar
+            android:id="@+id/fontSizeSeek"
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:layout_below="@id/fontSizeText"
+            style="@style/ItemSeekBarStyle" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/lineSpacingItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/MainItemMargin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fontSizeItem">
+
+        <TextView
+            android:id="@+id/lineSpacingText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/ItemTextStyle"
+            android:text="@string/line_spacing"/>
+        <SeekBar
+            android:id="@+id/lineSpacingSeek"
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:layout_below="@id/lineSpacingText"
+            style="@style/ItemSeekBarStyle" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/letterSpacingItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/MainItemMargin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lineSpacingItem">
+
+        <TextView
+            android:id="@+id/letterSpacingText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/ItemTextStyle"
+            android:text="@string/letter_spacing"/>
+        <SeekBar
+            android:id="@+id/letterSpacingSeek"
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:layout_below="@id/letterSpacingText"
+            style="@style/ItemSeekBarStyle" />
+
+    </RelativeLayout>
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        style="@style/MainItemMargin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/letterSpacingItem">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/font_bold" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/font_medium" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/font_demilight" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/singleLineText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:lines="1"
+        android:maxLength="25"
+        tools:text="@string/single_line_example"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+    <TextView
+        android:id="@+id/multiLineText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:lines="3"
+        tools:text="@string/multi_line_example"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/singleLineText" />
+
+</android.support.constraint.ConstraintLayout>
+
