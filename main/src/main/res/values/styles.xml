@@ -9,11 +9,41 @@
 
     <style name="ItemTextStyle">
         <item name="android:layout_marginBottom">15dp</item>
-        <item name="android:textSize">16sp</item>
+        <item name="android:textSize">14sp</item>
     </style>
 
     <style name="ItemSeekBarStyle">
         <item name="android:max">30</item>
     </style>
+
+
+    <!-- Example Text Style -->
+    <style name="CommonExampleTextStyle">
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:layout_marginEnd">10dp</item>
+        <item name="android:layout_marginTop">15dp</item>
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <style
+        name="ExampleSingleLineStyle"
+        parent="CommonExampleTextStyle">
+
+        <item name="android:maxLength">20</item>
+        <item name="android:lines">1</item>
+        <item name="android:background">@color/colorLightGrey</item>
+
+    </style>
+
+    <style
+        name="ExampleMultiLineStyle"
+        parent="CommonExampleTextStyle">
+
+        <item name="android:lines">5</item>
+        <item name="android:background">@color/colorDarkGrey</item>
+
+    </style>
+    <!-- End Example Text Style -->
+
 
 </resources>
