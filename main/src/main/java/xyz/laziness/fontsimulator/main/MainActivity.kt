@@ -4,9 +4,14 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.TypedValue
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.SeekBar
 import kotlinx.android.synthetic.main.activity_main.*
+
+
+const val standardTextSize: Int = 14
 
 class MainActivity : AppCompatActivity() {
 
@@ -33,6 +38,53 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+
+    private fun setSeekBarEvent() {
+        fontSizeSeek.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(sb: SeekBar?, progress: Int, fromUser: Boolean) {
+                val currentSize = (progress + standardTextSize).toFloat()
+                singleLineText.setTextSize(
+                        TypedValue.COMPLEX_UNIT_SP, currentSize)
+                multiLineText.setTextSize(
+                        TypedValue.COMPLEX_UNIT_SP, currentSize)
+            }
+
+            override fun onStartTrackingTouch(sb: SeekBar?) {
+            }
+
+            override fun onStopTrackingTouch(sb: SeekBar?) {
+            }
+        })
+
+        lineSpacingSeek.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(sb: SeekBar?, progress: Int, fromUser: Boolean) {
+                val currentSpacing = progress.toFloat()
+                singleLineText.setLineSpacing(currentSpacing, 1f)
+                multiLineText.setLineSpacing(currentSpacing, 1f)
+            }
+
+            override fun onStartTrackingTouch(sb: SeekBar?) {
+            }
+
+            override fun onStopTrackingTouch(sb: SeekBar?) {
+            }
+        })
+
+        letterSpacingSeek.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(sb: SeekBar?, progress: Int, fromUser: Boolean) {
+                val currentSpacing = progress.toFloat()
+                singleLineText.letterSpacing = currentSpacing
+                multiLineText.letterSpacing = currentSpacing
+            }
+
+            override fun onStartTrackingTouch(sb: SeekBar?) {
+            }
+
+            override fun onStopTrackingTouch(sb: SeekBar?) {
+            }
+        })
+    }
+
     private fun setEditTextEvent() {
         editText.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(p0: Editable?) {
@@ -43,12 +95,14 @@ class MainActivity : AppCompatActivity() {
 
             override fun onTextChanged(str: CharSequence?, start: Int, before: Int, count: Int) {
                 singleLineText.text = str
+                multiLineText.text = str
             }
         })
     }
 
     private fun initUi() {
         setEditTextEvent()
+        setSeekBarEvent()
     }
 
 }
