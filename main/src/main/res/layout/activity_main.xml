@@ -1,188 +1,194 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    tools:layout_editor_absoluteY="25dp">
+    tools:context=".MainActivity" >
 
-    <android.support.design.widget.AppBarLayout
-        android:id="@+id/appBarLayout"
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        tools:layout_editor_absoluteY="25dp">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appBarLayout"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
-
-    </android.support.design.widget.AppBarLayout>
-
-    <EditText
-        android:id="@+id/editText"
-        style="@style/MainItemMargin"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:hint="@string/example_hint"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
-
-    <RelativeLayout
-        android:id="@+id/fontSizeItem"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/MainItemMargin"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText">
-
-        <TextView
-            android:id="@+id/fontSizeText"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/ItemTextStyle"
-            android:text="@string/font_size"/>
+            android:theme="@style/AppTheme.AppBarOverlay">
 
-        <TextView
-            android:id="@+id/fontSizeValue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/ItemTextStyle"
-            tools:text="@string/value_example"
-            android:layout_marginStart="10dp"
-            android:layout_toEndOf="@+id/fontSizeText" />
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
 
-        <SeekBar
-            android:id="@+id/fontSizeSeek"
+        </android.support.design.widget.AppBarLayout>
+
+        <EditText
+            android:id="@+id/editText"
+            style="@style/MainItemMargin"
             android:layout_width="match_parent"
-            android:layout_height="15dp"
-            android:layout_below="@id/fontSizeText"
-            style="@style/ItemSeekBarStyle" />
+            android:layout_height="40dp"
+            android:hint="@string/example_hint"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
 
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/lineSpacingItem"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/MainItemMargin"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fontSizeItem">
-
-        <TextView
-            android:id="@+id/lineSpacingText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/ItemTextStyle"
-            android:text="@string/line_spacing"/>
-
-        <TextView
-            android:id="@+id/lineSpacingValue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/ItemTextStyle"
-            tools:text="@string/value_example"
-            android:layout_marginStart="10dp"
-            android:layout_toEndOf="@+id/lineSpacingText" />
-
-        <SeekBar
-            android:id="@+id/lineSpacingSeek"
+        <RelativeLayout
+            android:id="@+id/fontSizeItem"
             android:layout_width="match_parent"
-            android:layout_height="15dp"
-            android:layout_below="@id/lineSpacingText"
-            style="@style/ItemSeekBarStyle" />
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/letterSpacingItem"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/MainItemMargin"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lineSpacingItem">
-
-        <TextView
-            android:id="@+id/letterSpacingText"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/ItemTextStyle"
-            android:text="@string/letter_spacing"/>
+            style="@style/MainItemMargin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText">
 
-        <TextView
-            android:id="@+id/letterSpacingValue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/ItemTextStyle"
-            tools:text="@string/value_example"
-            android:layout_marginStart="10dp"
-            android:layout_toEndOf="@+id/letterSpacingText" />
+            <TextView
+                android:id="@+id/fontSizeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/ItemTextStyle"
+                android:text="@string/font_size"/>
 
-        <SeekBar
-            android:id="@+id/letterSpacingSeek"
+            <TextView
+                android:id="@+id/fontSizeValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/ItemTextStyle"
+                tools:text="@string/value_example"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/fontSizeText" />
+
+            <SeekBar
+                android:id="@+id/fontSizeSeek"
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:layout_below="@id/fontSizeText"
+                style="@style/ItemSeekBarStyle" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lineSpacingItem"
             android:layout_width="match_parent"
-            android:layout_height="15dp"
-            android:layout_below="@id/letterSpacingText"
-            style="@style/ItemSeekBarStyle" />
-
-    </RelativeLayout>
-
-    <RadioGroup
-        android:id="@+id/fontGroup"
-        style="@style/MainItemMargin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/letterSpacingItem">
-
-        <RadioButton
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/font_bold" />
+            style="@style/MainItemMargin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fontSizeItem">
 
-        <RadioButton
-            android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/lineSpacingText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/ItemTextStyle"
+                android:text="@string/line_spacing"/>
+
+            <TextView
+                android:id="@+id/lineSpacingValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/ItemTextStyle"
+                tools:text="@string/value_example"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/lineSpacingText" />
+
+            <SeekBar
+                android:id="@+id/lineSpacingSeek"
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:layout_below="@id/lineSpacingText"
+                style="@style/ItemSeekBarStyle" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/letterSpacingItem"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/font_medium" />
+            style="@style/MainItemMargin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lineSpacingItem">
 
-        <RadioButton
-            android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/letterSpacingText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/ItemTextStyle"
+                android:text="@string/letter_spacing"/>
+
+            <TextView
+                android:id="@+id/letterSpacingValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/ItemTextStyle"
+                tools:text="@string/value_example"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/letterSpacingText" />
+
+            <SeekBar
+                android:id="@+id/letterSpacingSeek"
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:layout_below="@id/letterSpacingText"
+                style="@style/ItemSeekBarStyle" />
+
+        </RelativeLayout>
+
+        <RadioGroup
+            android:id="@+id/fontGroup"
+            style="@style/MainItemMargin"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/font_demilight" />
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/letterSpacingItem">
 
-    </RadioGroup>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/font_bold" />
 
-    <TextView
-        android:id="@+id/singleLineText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/ExampleSingleLineStyle"
-        tools:text="@string/single_line_example"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fontGroup" />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/font_medium" />
 
-    <TextView
-        android:id="@+id/multiLineText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/ExampleMultiLineStyle"
-        tools:text="@string/multi_line_example"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/singleLineText" />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/font_demilight" />
 
-</android.support.constraint.ConstraintLayout>
+        </RadioGroup>
 
+        <TextView
+            android:id="@+id/singleLineText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/ExampleSingleLineStyle"
+            tools:text="@string/single_line_example"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fontGroup" />
+
+        <TextView
+            android:id="@+id/multiLineText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/ExampleMultiLineStyle"
+            tools:text="@string/multi_line_example"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/singleLineText" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</ScrollView>
