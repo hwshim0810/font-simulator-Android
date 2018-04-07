@@ -1,13 +1,12 @@
 package xyz.laziness.fontsimulator.main
 
 import android.os.Bundle
-import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.Menu
 import android.view.MenuItem
-
 import kotlinx.android.synthetic.main.activity_main.*
-import xyz.laziness.fontsimulator.feature.R
 
 class MainActivity : AppCompatActivity() {
 
@@ -15,11 +14,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
-
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
-        }
+        initUi()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -37,4 +32,24 @@ class MainActivity : AppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
         }
     }
+
+    private fun setEditTextEvent() {
+        editText.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(p0: Editable?) {
+            }
+
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+
+            override fun onTextChanged(str: CharSequence?, start: Int, before: Int, count: Int) {
+                singleLineText.text = str
+            }
+        })
+    }
+
+    private fun initUi() {
+        setEditTextEvent()
+    }
+
 }
+
