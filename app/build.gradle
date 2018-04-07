@@ -25,6 +25,6 @@ android {
 }
 
 dependencies {
-    implementation project(':feature')
+    implementation project(':main')
     implementation project(':base')
 }

@@ -22,5 +22,5 @@ dependencies {
     api 'com.android.support.constraint:constraint-layout:1.0.2'
     api 'com.android.support:design:27.1.0'
     application project(':app')
-    feature project(':feature')
+    feature project(':main')
 }
