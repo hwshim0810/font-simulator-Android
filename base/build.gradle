@@ -7,7 +7,7 @@ android {
         minSdkVersion 23
         targetSdkVersion 27
         versionCode 1
-        versionName "1.0"
+        versionName "1.00"
     }
     buildTypes {
         release {
@@ -22,5 +22,5 @@ dependencies {
     api 'com.android.support.constraint:constraint-layout:1.0.2'
     api 'com.android.support:design:27.1.0'
     application project(':app')
-    feature project(':feature')
+    feature project(':main')
 }
