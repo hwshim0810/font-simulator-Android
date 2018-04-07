@@ -14,8 +14,8 @@
                 <category android:name="android.intent.category.DEFAULT" />
 
                 <data
-                    android:host="laziness.xyz"
-                    android:pathPattern="/.*"
+                    android:host="font.laziness.xyz"
+                    android:pathPattern="/"
                     android:scheme="http" />
             </intent-filter>
             <intent-filter>
