@@ -1,7 +1,6 @@
 package xyz.laziness.fontsimulator.main
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.TypedValue
@@ -19,7 +18,7 @@ const val STANDARD_TEXT_SIZE: Int = 14
 const val WEIGHT_LINE_SPACING: Float = 1.5f
 const val WEIGHT_LETTER_SPACING: Float = 0.05f
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : MyActivity() {
 
     private val fontBold by lazy { getString(R.string.font_bold) }
     private val fontDemiLight by lazy { getString(R.string.font_demilight) }
