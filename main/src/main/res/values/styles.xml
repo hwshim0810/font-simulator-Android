@@ -13,6 +13,8 @@
     </style>
 
     <style name="ItemSeekBarStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">25dp</item>
         <item name="android:max">30</item>
     </style>
 

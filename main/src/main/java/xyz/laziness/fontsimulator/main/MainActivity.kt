@@ -1,5 +1,6 @@
 package xyz.laziness.fontsimulator.main
 
+import android.os.Build
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -9,13 +10,14 @@ import android.view.MenuItem
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.SeekBar
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig
 import uk.co.chrisjenx.calligraphy.TypefaceUtils
 
 
 const val STANDARD_TEXT_SIZE: Int = 14
-const val WEIGHT_LINE_SPACING: Float = 1.5f
+const val WEIGHT_LINE_SPACING: Float = 1.0f
 const val WEIGHT_LETTER_SPACING: Float = 0.05f
 
 class MainActivity : MyActivity() {
@@ -90,13 +92,21 @@ class MainActivity : MyActivity() {
         letterSpacingSeek.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(sb: SeekBar?, progress: Int, fromUser: Boolean) {
                 val currentSpacing = progress * WEIGHT_LETTER_SPACING
-                singleLineText.letterSpacing = currentSpacing
-                multiLineText.letterSpacing = currentSpacing
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    singleLineText.letterSpacing = currentSpacing
+                    multiLineText.letterSpacing = currentSpacing
+                }
+
                 letterSpacingValue.text = String.format(
                         getString(R.string.px_under_two_holder), currentSpacing)
             }
 
             override fun onStartTrackingTouch(sb: SeekBar?) {
+                if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+                    Toast.makeText(applicationContext,
+                            getString(R.string.app_version_low_msg), Toast.LENGTH_SHORT).show()
+                }
             }
 
             override fun onStopTrackingTouch(sb: SeekBar?) {
