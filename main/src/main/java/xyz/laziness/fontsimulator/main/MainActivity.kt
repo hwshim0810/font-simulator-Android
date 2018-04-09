@@ -17,7 +17,7 @@ import uk.co.chrisjenx.calligraphy.TypefaceUtils
 
 
 const val STANDARD_TEXT_SIZE: Int = 14
-const val WEIGHT_LINE_SPACING: Float = 1.5f
+const val WEIGHT_LINE_SPACING: Float = 1.0f
 const val WEIGHT_LETTER_SPACING: Float = 0.05f
 
 class MainActivity : MyActivity() {
