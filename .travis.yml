@@ -55,6 +55,9 @@ before_install:
   - chmod +x gradlew
   - ./gradlew dependencies || true
 
+install:
+  - echo y | sdkmanager "platforms;android-26 Android SDK Platform 26"
+
 before_script:
   - echo no | android create avd --force -n test -t android-$EMULATOR_API --abi armeabi-v7a
   - emulator -avd test -no-skin -no-audio -no-window &
