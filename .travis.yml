@@ -50,7 +50,7 @@ android:
 before_install:
   # For constraint layout
   - mkdir "$ANDROID_HOME/licenses" || true
-  - cp ./licenses/
+  - cp ./licenses/* "$ANDROID_HOME/licenses/"
 
 before_script:
   - echo no | android create avd --force -n test -t android-$EMULATOR_API --abi armeabi-v7a
