@@ -5,11 +5,6 @@ jdk: oraclejdk8
 notifications:
   email: false
 
-branches:
-  only:
-    - develop
-    - master
-
 before_cache:
   - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
   - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
@@ -59,7 +54,7 @@ before_install:
   - echo -e "\n84831b9409646a918e30573bab4c9c91346d8abd" > "$ANDROID_HOME/licenses/android-sdk-preview-license"
   - chmod +x gradlew
   - ./gradlew dependencies || true
-  - yes | sudo sdkmanager --licenses
+  - echo yes | sudo sdkmanager --licenses
 
 before_script:
   - echo no | android create avd --force -n test -t android-$EMULATOR_API --abi armeabi-v7a
