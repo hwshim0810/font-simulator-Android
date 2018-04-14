@@ -43,8 +43,9 @@ android:
   - sys-img-armeabi-v7a-android-$EMULATOR_API
 
   licenses:
+  - android-sdk-preview-license-.+
   - android-sdk-license-.+
-  - '.+'
+  - google-gdk-license-.+
 
 before_install:
   # For constraint layout
