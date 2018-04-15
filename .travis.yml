@@ -26,12 +26,17 @@ android:
   components:
   - tools
   - platform-tools
+  - extra
+  - add-on
   - build-tools-$ANDROID_BUILD_TOOLS
   - android-$ANDROID_API
   - android-$EMULATOR_API
   - android-26
   - build-tools-26.0.1
-  - addon-google_apis-google-$ANDROID_API  # Google play services
+
+  # Google play services
+  - addon-google_apis-google-$ANDROID_API
+  - addon-google_apis-google-$EMULATOR_API
 
   # Additional components
   - extra-android-support
