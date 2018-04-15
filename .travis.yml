@@ -1,5 +1,5 @@
 language: android
-sudo: required  # a license needs to be manually added later
+sudo: false
 jdk: oraclejdk8
 
 notifications:
