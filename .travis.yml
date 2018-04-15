@@ -30,7 +30,7 @@ android:
 #  - add-on
   - build-tools-$ANDROID_BUILD_TOOLS
   - android-$ANDROID_API
-#  - android-$EMULATOR_API
+  - android-$EMULATOR_API
 
   # Google play services
 #  - addon-google_apis-google-$ANDROID_API
@@ -45,7 +45,7 @@ android:
   # Specify at least one system image,
   # if you need to run emulator(s) during your tests
   - sys-img-armeabi-v7a-android-$ANDROID_API
-#  - sys-img-armeabi-v7a-android-$EMULATOR_API
+  - sys-img-armeabi-v7a-android-$EMULATOR_API
 
   licenses:
   - android-sdk-preview-license-.+
@@ -61,7 +61,7 @@ android:
 #  - ./gradlew dependencies || true
 
 before_script:
-  - echo no | android create avd --force -n test -t android-27 --abi armeabi-v7a
+  - echo no | android create avd --force -n test -t android-19 --abi armeabi-v7a
   - emulator -avd test -no-skin -no-audio -no-window &
   - android-wait-for-emulator
   - adb shell input keyevent 82 &
