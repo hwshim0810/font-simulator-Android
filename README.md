@@ -1,7 +1,9 @@
 # font-simulator-Android
 > :kr:Font simulator for Android
 
-- Help your app design through adjustable text style
+- Help your app design through adjustable text style  
+
+[![Build Process](https://travis-ci.org/hwshim0810/font-simulator-Android.svg?branch=master)](https://travis-ci.org/hwshim0810/font-simulator-Android/)  
 
 ### This app is...
 - Based on NotoSans
