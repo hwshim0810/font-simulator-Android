@@ -26,28 +26,26 @@ android:
   components:
   - tools
   - platform-tools
-  - extra
-  - add-on
+#  - extra
+#  - add-on
   - build-tools-$ANDROID_BUILD_TOOLS
   - android-$ANDROID_API
-  - android-$EMULATOR_API
-  - android-26
-  - build-tools-26.0.1
+#  - android-$EMULATOR_API
 
   # Google play services
-  - addon-google_apis-google-$ANDROID_API
-  - addon-google_apis-google-$EMULATOR_API
+#  - addon-google_apis-google-$ANDROID_API
+#  - addon-google_apis-google-$EMULATOR_API
 
   # Additional components
-  - extra-android-support
-  - extra-google-google_play_services
-  - extra-google-m2repository
+#  - extra-android-support
+#  - extra-google-google_play_services
+#  - extra-google-m2repository
   - extra-android-m2repository  # For design library
 
   # Specify at least one system image,
   # if you need to run emulator(s) during your tests
   - sys-img-armeabi-v7a-android-$ANDROID_API
-  - sys-img-armeabi-v7a-android-$EMULATOR_API
+#  - sys-img-armeabi-v7a-android-$EMULATOR_API
 
   licenses:
   - android-sdk-preview-license-.+
@@ -63,7 +61,7 @@ android:
 #  - ./gradlew dependencies || true
 
 before_script:
-  - echo no | android create avd --force -n test -t android-$EMULATOR_API --abi armeabi-v7a
+  - echo no | android create avd --force -n test -t android-27 --abi armeabi-v7a
   - emulator -avd test -no-skin -no-audio -no-window &
   - android-wait-for-emulator
   - adb shell input keyevent 82 &
@@ -71,5 +69,4 @@ before_script:
 script:
   # Command ./gradlew connectedCheck
   # executes instrumentation tests located in src/androidTests/
-  - android list target
   - ./gradlew clean build connectedCheck -PdisablePreDex --stacktrace
