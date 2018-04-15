@@ -31,6 +31,8 @@ android:
   - build-tools-$ANDROID_BUILD_TOOLS
   - android-$ANDROID_API
   - android-$EMULATOR_API
+  - android-26
+  - build-tools-26.0.1
 
   # Google play services
 #  - addon-google_apis-google-$ANDROID_API
