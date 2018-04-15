@@ -17,7 +17,8 @@ cache:
 
 env:
   global:
-    - ANDROID_API=22
+    - ANDROID_API=27
+    - EMULATOR_API=22
     - ANDROID_BUILD_TOOLS=27.0.3
     - ADB_INSTALL_TIMEOUT=10  # minutes
 
@@ -29,6 +30,7 @@ android:
   #  - add-on
     - build-tools-$ANDROID_BUILD_TOOLS
     - android-$ANDROID_API
+    - android-$EMULATOR_API
 
     # Google play services
   #  - addon-google_apis-google-$ANDROID_API
@@ -42,7 +44,7 @@ android:
 
     # Specify at least one system image,
     # if you need to run emulator(s) during your tests
-    - sys-img-armeabi-v7a-android-$ANDROID_API
+    - sys-img-armeabi-v7a-android-$EMULATOR_API
 
   licenses:
     - android-sdk-preview-license-.+
@@ -58,7 +60,7 @@ android:
 #  - ./gradlew dependencies || true
 
 before_script:
-  - echo no | android create avd --force -n test -t android-$ANDROID_API --abi armeabi-v7a
+  - echo no | android create avd --force -n test -t android-$EMULATOR_API --abi armeabi-v7a
   - emulator -avd test -no-skin -no-audio -no-window &
   - android-wait-for-emulator
   - adb shell input keyevent 82 &
@@ -67,4 +69,4 @@ script:
   # Command ./gradlew connectedCheck
   # executes instrumentation tests located in src/androidTests/
   - android list target
-  - ./gradlew connectedAndroidTest -PdisablePreDex
+  - ./gradlew connectedAndroidTest -PdisablePreDex --stacktrace
