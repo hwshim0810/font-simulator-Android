@@ -59,11 +59,11 @@ class MainActivity : MyActivity() {
             override fun onProgressChanged(sb: SeekBar?, progress: Int, fromUser: Boolean) {
                 val currentSize = (progress + STANDARD_TEXT_SIZE).toFloat()
                 singleLineText.setTextSize(
-                        TypedValue.COMPLEX_UNIT_SP, currentSize)
+                        TypedValue.COMPLEX_UNIT_DIP, currentSize)
                 multiLineText.setTextSize(
-                        TypedValue.COMPLEX_UNIT_SP, currentSize)
+                        TypedValue.COMPLEX_UNIT_DIP, currentSize)
                 fontSizeValue.text = String.format(
-                        getString(R.string.sp_holder), currentSize.toInt())
+                        getString(R.string.dp_holder), currentSize.toInt())
             }
 
             override fun onStartTrackingTouch(sb: SeekBar?) {
@@ -144,7 +144,7 @@ class MainActivity : MyActivity() {
 
     private fun initValueView() {
         fontSizeValue.text = String.format(
-                getString(R.string.sp_holder), STANDARD_TEXT_SIZE)
+                getString(R.string.dp_holder), STANDARD_TEXT_SIZE)
         lineSpacingValue.text = String.format(
                 getString(R.string.px_under_two_holder), 0f)
         letterSpacingValue.text = String.format(
