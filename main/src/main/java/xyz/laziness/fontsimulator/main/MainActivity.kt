@@ -63,7 +63,7 @@ class MainActivity : MyActivity() {
                 multiLineText.setTextSize(
                         TypedValue.COMPLEX_UNIT_DIP, currentSize)
                 fontSizeValue.text = String.format(
-                        getString(R.string.sp_holder), currentSize.toInt())
+                        getString(R.string.dp_holder), currentSize.toInt())
             }
 
             override fun onStartTrackingTouch(sb: SeekBar?) {
